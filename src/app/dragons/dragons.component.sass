@@ -1,0 +1,56 @@
+.container
+    @media (min-width: 1024px)
+        height: 100%
+
+.content
+    @media (min-width: 1024px)
+        height: 100%
+        justify-content: center
+        padding-top: 0
+    padding: 15px
+    padding-top: 80px
+    display: flex
+    align-items: center
+    flex-flow: column wrap
+    ul 
+        padding: 0
+        margin: 0
+.title
+    color: white
+    margin-bottom: 3vw
+    font-size: 36px
+    @media (min-width: 1024px)
+        font-size: 52px
+.new__dragon
+    fa
+        display: inline-block
+        font-size: 13px
+        margin-right: 4px
+
+.table__buttons
+    width: 100%
+    display: flex
+    justify-content: space-between
+.dragons__list
+    list-style: none
+    width: 100%
+    max-width: 600px
+    .dragon__item
+        border-bottom: 1px solid white
+        color: white
+        height: 30px
+        width: 100%
+        margin-bottom: 0
+        display: flex
+        justify-content: space-between
+        padding: 0 15px
+        .dragon__name
+            color: #fff
+            &.disabled
+                pointer-events: none
+        .dragon__actions
+            .action__item
+                margin: 0 10px
+                cursor: pointer
+.table__buttons
+    margin-top: 15px

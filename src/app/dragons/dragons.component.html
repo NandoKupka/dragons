@@ -1,0 +1,39 @@
+
+
+<div class="container" *ngIf="dragons">
+
+  <div class="content">
+
+    <h1 class="title">Dragons List</h1>
+    
+    <div class="new__dragon">
+      <a [routerLink]="['', 'newDragon']" class="button is-success"><fa name="plus"></fa>  New</a>
+    </div>
+    <ul class="dragons__list">
+      <li *ngFor="let drag of dragons.items" class="dragon__item">
+
+        <a class="dragon__name" [ngClass]="!drag.name ? 'disabled' : ''" [routerLink]="['', 'dragon', drag.slug]">
+          {{ drag.name || 'No name' }}
+        </a>
+
+        <div class="dragon__actions">
+          <a class="dragon__name" *ngIf="drag.slug" [routerLink]="['', 'dragon', drag.slug]">
+            <fa class="action__item" name="eye"></fa>
+          </a>
+
+          <a class="dragon__name" *ngIf="drag.slug" [routerLink]="['', 'dragon', drag.slug, 'edit']">
+            <fa class="action__item" name="edit"></fa>
+          </a>          
+        
+          <fa class="action__item" *ngIf="drag.slug" (click)="delete(drag)" name="trash"></fa>
+        </div>
+
+      </li>
+      <div class="table__buttons">
+        <button (click)="previousPage()" [disabled]="page == 0" class="button">Previous</button>
+        <button (click)="nextPage()" [disabled]="page == limitPage" class="button">Next</button>
+      </div>
+    </ul>
+  </div>
+
+</div>

@@ -1,0 +1,32 @@
+<div class="container" *ngIf="dragon">
+
+  <div class="content">
+
+    <div class="header">
+      <a [routerLink]="['', 'dragons']" class="back">Back</a>
+      <h1 class="title">{{ dragon.name }}</h1>
+      
+      <div class="header__actions">
+        <a class="action__item" *ngIf="dragon.slug" [routerLink]="['', 'dragon', dragon.slug, 'edit']">
+          <fa name="edit"></fa>
+        </a>
+
+        <a class="action__item" *ngIf="dragon.slug" (click)="delete(drag)">
+          <fa name="trash"></fa>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="dragon__info">
+      Name: {{dragon.name}}
+    </div>
+    <div class="dragon__info">
+      Type: {{dragon.type}}
+    </div>
+    <div class="dragon__info">
+      Creation date: {{formatDate(dragon.created_at)}}
+    </div>
+
+  </div>
+</div>

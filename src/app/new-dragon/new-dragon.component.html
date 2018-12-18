@@ -1,0 +1,39 @@
+<div class="container" *ngIf="dragon">
+
+    <div class="content">
+  
+      <div class="header">
+        <a [routerLink]="['', 'dragons']" class="back">Back</a>
+        <h1 class="title">New Dragon</h1>
+        <div class="header__actions">
+            <a class="action__item" *ngIf="dragon.slug" [routerLink]="['', 'dragon', dragon.slug, 'edit']">
+              <fa name="edit"></fa>
+            </a>
+    
+            <a class="action__item" *ngIf="dragon.slug" (click)="delete(drag)">
+              <fa name="trash"></fa>
+            </a>
+          </div>  
+      </div>
+
+      <div class="dragon__box">
+
+        
+        <div class="dragon__info">
+          Name: 
+          <input class="input" type="text" name="name" [(ngModel)]="dragon.name" placeholder="Dragon's name">
+        </div>
+        
+        <div class="dragon__info">
+          Type:
+          <input class="input" type="text" name="type" [(ngModel)]="dragon.type" placeholder="Dragon's type">
+        </div>        
+
+        <div class="dragon__info save">
+          <button [disabled]="dragon.name == ''" (click)="save()" class="button is-success">Save</button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
