@@ -1,0 +1,19 @@
+<section class='login__page'>
+  <div class="login__box">
+      <div class="box__top">
+          <h1 class="title">Welcome!</h1>
+          <h2 class="subtitle">Please, login to continue</h2>
+      </div>
+      <form ngNativeValidate (submit)="loginOwn()" class="login__form">
+          <div class="form__field">
+              <input class="input" matInput placeholder="Username" required name="username" [(ngModel)]="userData.username">
+          </div>
+          
+          <div  class="form__field">
+              <input class="input" matInput type="password" required placeholder="Password" name="password" [(ngModel)]="userData.password">
+          </div>
+          
+          <button class="form__btn form__field button" type="submit" mat-raised-button color="primary">Login</button>
+      </form>
+  </div>
+</section> 

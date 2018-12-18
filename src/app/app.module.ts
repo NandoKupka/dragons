@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewDragonComponent } from './view-dragon/view-dragon.component';
 import { EditDragonComponent } from './edit-dragon/edit-dragon.component';
 import { NewDragonComponent } from './new-dragon/new-dragon.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -19,16 +21,17 @@ import { NewDragonComponent } from './new-dragon/new-dragon.component';
     ViewDragonComponent,
     EditDragonComponent,
     NewDragonComponent,
+    LoginComponent,
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     AngularFontAwesomeModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
